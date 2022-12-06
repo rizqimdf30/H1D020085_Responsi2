@@ -1,0 +1,27 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Lihat Paket</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true" color="dark">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Paket</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-list lines="full">
+    <ion-card *ngFor="let item of data">
+      <ion-card-content> {{ data.no }} </ion-card-content>
+    </ion-card>
+    <ion-card-header>
+      <ion-card-title>{{ data.nama }}</ion-card-title>
+      <ion-card-subtitle>{{ data.harga }}</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card color="dark">
+      <ion-card-content> {{ data.layanan }} </ion-card-content>
+    </ion-card>
+  </ion-list>
+</ion-content>

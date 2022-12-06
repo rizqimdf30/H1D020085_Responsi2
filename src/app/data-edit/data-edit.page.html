@@ -1,0 +1,68 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Edit Paket</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true" color="dark">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Edit Paket</ion-title>
+    </ion-toolbar>
+  </ion-header>
+    <ion-item>
+      <ion-label position="floating">No</ion-label>
+      <ion-input
+        required
+        [(ngModel)]="no"
+        readonly
+        placeholder="nomor paket"
+        type="text"
+      >
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Nama</ion-label>
+      <ion-input
+        required
+        [(ngModel)]="nama"
+        placeholder="nama"
+        type="textfield"
+      >
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Layanan</ion-label>
+      <ion-input
+        required
+        [(ngModel)]="layanan"
+        placeholder="layanan"
+        type="textfield"
+      >
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Harga</ion-label>
+      <ion-input
+        required
+        [(ngModel)]="harga"
+        placeholder="harga"
+        type="textfield"
+      >
+      </ion-input>
+    </ion-item>
+    <ion-row>
+      <ion-col>
+        <ion-button
+          type="button"
+          (click)="editData()"
+          color="primary"
+          shape="full"
+          expand="block"
+          >Edit
+        </ion-button>
+      </ion-col>
+    </ion-row>
+</ion-content>

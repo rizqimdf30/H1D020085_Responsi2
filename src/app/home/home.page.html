@@ -1,0 +1,64 @@
+!DOCTYPE html>
+<ion-header [translucent]="true" color="primary">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>KangCukur</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large"> KangCukur </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-list-header color="primary">List Paket</ion-list-header>
+
+  <ion-card lines="inset" *ngFor="let data_value of data" >
+    <ion-item color="dark">
+      <ion-label>
+        <h2>{{ data_value.nama }}</h2>
+        <p>Rp {{ data_value.harga }}</p>
+      </ion-label>
+      <ion-icon
+        color="primary"
+        slot="end"
+        [routerLink]="['/data-lihat/',data_value.no]"
+        routerLinkActive="router-link-active"
+        name="eye-outline"
+        size="small"
+      ></ion-icon>
+      <ion-icon
+        color="warning"
+        slot="end"
+        [routerLink]="['/data-edit/',data_value.no]"
+        routerLinkActive="router-link-active"
+        name="create-outline"
+        size="small"
+      ></ion-icon>
+      <ion-icon
+        color="danger"
+        slot="end"
+        (click)="deleteData(data_value.no)"
+        name="trash-outline"
+        size="small"
+      ></ion-icon>
+    </ion-item>
+  </ion-card>
+    <ion-button
+      type="button"
+      [routerLink]="['/data-tambah']"
+      routerLinkActive="router-link-active"
+      color="primary"
+      expand="block"
+    >
+      Tambah Paket
+    </ion-button>
+  <ion-item (click)="logout()">
+    <ion-icon slot="start" ios="exit-outline" md="exit-sharp"></ion-icon>
+    <ion-label color="danger">Logout</ion-label>
+  </ion-item>
+</ion-content>
